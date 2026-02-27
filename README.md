@@ -22,31 +22,41 @@ We believe in seeing is believing. Here is a tour of the current live platform:
 ### 1. Secure Corporate Login
 Our platform uses a full-stack security gateway to ensure multi-tenancy. Companies can register or log in securely to access their private dashboard.
 
-> `[REPLACE_WITH_A_SCREENSHOT_OF_YOUR_LOGIN_TAB]`
+> <img width="1919" height="924" alt="image" src="https://github.com/user-attachments/assets/192e1dcb-42b4-4a76-a6b9-3d4a9ccdacbb" />
+<img width="1919" height="928" alt="image" src="https://github.com/user-attachments/assets/5cf1deea-3134-4ad4-9c9b-0a90e3075c33" />
+
+
 *Description: The clean, professional login/registration page using `st.tabs`.*
 
 ### 2. The Talent Dashboard & Ranking
 The core innovation. This dashboard ranks all applicants by their final AI composite score. You can also toggle **"🕶️ Blind Hiring Mode"** here to anonymize candidates and eliminate bias during the first review.
 
-> `[REPLACE_WITH_A_SCREENSHOT_OF_THE_MAIN_DASHBOARD_RANKING]`
+> <img width="1919" height="928" alt="image" src="https://github.com/user-attachments/assets/1b413365-e4bd-4944-bf94-2a072dde22e2" />
+<img width="1919" height="931" alt="image" src="https://github.com/user-attachments/assets/560ddbc6-a673-4646-8341-bac107a3e9c1" />
+
+
+
 *Description: The main `st.dataframe` showing the '🏆 Rankings' tab, complete with the green conditional formatting on the final score.*
 
 ### 3. Smart AI Deep-Dive (Explainable AI)
 Select a candidate, and Nexus generates a detailed profile, including suggestions for interview questions and a dynamic **radar chart** to visualize their strengths and weaknesses.
 
-> `[REPLACE_WITH_A_SCREENSHOT_OF_THE_CANDIDATE_PROFILE_WITH_RADAR_CHART]`
+> <img width="1919" height="924" alt="image" src="https://github.com/user-attachments/assets/5c4ac10c-cc7e-4d9b-8d9b-a11200bbeb3f" />
+
 *Description: The radar chart (`px.line_polar`) and the '🤖 AI Recruiter’s Commentary' section for a single candidate.*
 
 ### 4. Advanced Talent Analytics
 Nexus provides a bird's-eye view of your entire talent pipeline, with interactive distribution charts for experience and education.
 
-> `[REPLACE_WITH_A_SCREENSHOT_OF_THE_ANALYTICS_TAB]`
+> <img width="1919" height="924" alt="image" src="https://github.com/user-attachments/assets/955ca225-4bde-46d5-9082-bb47d6b114a6" />
+
 *Description: The '📈 Analytics' tab showing the `st.metric` cards (Total Applicants, Avg Experience) and the pie/histogram charts.*
 
 ### 5. The ML Lab (Model Training)
 For a dynamic demo, the ML Lab tab shows how our linear regression model is trained on the current database, triggering a "celebration" animation when complete.
 
-> `[REPLACE_WITH_A_SCREENSHOT_OF_THE_ML_LAB_TAB]`
+> <img width="1885" height="929" alt="image" src="https://github.com/user-attachments/assets/e638ced4-837c-447b-a83a-40450ef43cb1" />
+
 *Description: The '🤖 ML Lab' tab showing the '🚀 Start Model Training' button.*
 
 ---
