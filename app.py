@@ -312,7 +312,6 @@ if not df.empty:
                 from train_model import train_candidate_model
                 result = train_candidate_model()
                 st.success(result)
-                st.balloons() # Added the celebration animation!
             except Exception as e:
                 st.error(f"Training failed: {e}")
             
