@@ -133,7 +133,6 @@ def hash_password(password):
     return hashlib.sha256(password.encode()).hexdigest()
 
 def render_footer():
-    # Removed the Hackathon text, keeping it clean and commercial
     st.markdown("""
         <div style='text-align: center; color: #6b7280; padding-top: 50px; padding-bottom: 20px; font-size: 0.85rem;'>
             &copy; 2026 Future Innovators. All rights reserved.
@@ -301,7 +300,9 @@ if not df.empty:
 
     # 2. The Main Leaderboard Table (Highly Styled)
     st.markdown("### 🏆 Live Talent Leaderboard")
-    display_cols = ['name', 'email', 'FINAL_SCORE', 'semantic_match_score', 'years_experience', 'education_level', 'degree', 'certificate_skills']
+    
+    # FULL COLUMNS RESTORED HERE
+    display_cols = ['name', 'email', 'online_links', 'FINAL_SCORE', 'semantic_match_score', 'years_experience', 'education_level', 'degree', 'passing_year', 'certificate_skills', 'career_objective']
     existing_cols = [col for col in display_cols if col in ranked_df.columns]
     display_df = ranked_df[existing_cols].copy()
 
@@ -312,14 +313,14 @@ if not df.empty:
     format_dict = {"FINAL_SCORE": "{:.2f}", "years_experience": "{:.1f}", "semantic_match_score": "{:.2f}"}
     active_formats = {k: v for k, v in format_dict.items() if k in display_df.columns}
     
-    # Table Styling Magic: Shifted to Purples and Blues to match the new theme
+    # Table Styling Magic
     styled_table = (display_df.style
                     .background_gradient(subset=['FINAL_SCORE'], cmap="Purples")
                     .background_gradient(subset=['semantic_match_score'], cmap="Blues")
                     .bar(subset=['years_experience'], color='#bd93f9', vmin=0)
                     .format(active_formats))
     
-    st.dataframe(styled_table, use_container_width=True, height=300)
+    st.dataframe(styled_table, use_container_width=True, height=350)
     st.divider()
 
     # 3. Deep Analysis Tabs
@@ -346,7 +347,6 @@ if not df.empty:
                     ]
                 })
                 fig = px.line_polar(radar_data, r='Score', theta='Metric', line_close=True, range_r=[0,100], template='plotly_dark')
-                # Changed radar line color to match new neon purple theme
                 fig.update_traces(fill='toself', line_color='#bd93f9')
                 fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
                 st.plotly_chart(fig, use_container_width=True)
@@ -355,7 +355,8 @@ if not df.empty:
                 st.markdown("**🤖 AI Recruiter's Commentary**")
                 st.info(f"**Objective:** {cand_data.get('career_objective', 'N/A')}")
                 st.write(f"**Contact:** {cand_data.get('email', 'N/A') if not blind_mode else 'CONFIDENTIAL'}")
-                st.write(f"**Education:** {cand_data.get('education_level', 'Unknown')} | {cand_data.get('degree', 'Unknown')}")
+                st.write(f"**Links:** {cand_data.get('online_links', 'None detected')}")
+                st.write(f"**Education:** {cand_data.get('education_level', 'Unknown')} | {cand_data.get('degree', 'Unknown')} (Class of {cand_data.get('passing_year', 'Unknown')})")
                 
                 if cand_data.get('semantic_match_score', 0) > 0.75:
                     st.success(f"**High Potential:** {cand_data['name']} shows elite semantic alignment with the required skills.")
@@ -374,13 +375,11 @@ if not df.empty:
             st.markdown("**Education Breakdown**")
             edu_col = 'degree' if 'degree' in ranked_df.columns else 'education_level'
             if edu_col in ranked_df.columns:
-                # Updated pie chart colors
                 fig_edu = px.pie(ranked_df, names=edu_col, hole=0.5, color_discrete_sequence=['#bd93f9', '#8be9fd', '#ff79c6', '#f1fa8c'], template='plotly_dark')
                 fig_edu.update_layout(paper_bgcolor='rgba(0,0,0,0)')
                 st.plotly_chart(fig_edu, use_container_width=True)
         with c2:
             st.markdown("**Experience Distribution**")
-            # Updated histogram color
             fig_exp = px.histogram(ranked_df, x='years_experience', nbins=10, color_discrete_sequence=['#bd93f9'], template='plotly_dark')
             fig_exp.update_layout(paper_bgcolor='rgba(0,0,0,0)')
             st.plotly_chart(fig_exp, use_container_width=True)
