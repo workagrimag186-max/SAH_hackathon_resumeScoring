@@ -9,9 +9,9 @@ import pymongo
 import hashlib
 
 # Make the webpage wide and set professional theme
-st.set_page_config(layout="wide", page_title="Nexus HR Intelligence", page_icon="💠", initial_sidebar_state="expanded")
+st.set_page_config(layout="wide", page_title="Nexus HR Intelligence", page_icon="🌌", initial_sidebar_state="expanded")
 
-# --- ULTIMATE GLASSMORPHISM & ANIMATION CSS ---
+# --- DEEP NEBULA GLASSMORPHISM CSS ---
 st.markdown("""
 <style>
     /* Import Google Font */
@@ -22,9 +22,9 @@ st.markdown("""
         font-family: 'Poppins', sans-serif !important;
     }
 
-    /* Main App Gradient Background */
+    /* Main App Gradient Background (Obsidian to Deep Purple) */
     .stApp {
-        background: linear-gradient(135deg, #091217, #11222c, #1a3644) !important;
+        background: linear-gradient(135deg, #050505, #120d1f, #1e1332) !important;
         color: #ffffff !important;
     }
 
@@ -33,15 +33,10 @@ st.markdown("""
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
     }
-    @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-        100% { transform: translateY(0px); }
-    }
     @keyframes pulseGlow {
-        0% { box-shadow: 0 0 15px rgba(0, 201, 255, 0.2); }
-        50% { box-shadow: 0 0 25px rgba(0, 201, 255, 0.5); }
-        100% { box-shadow: 0 0 15px rgba(0, 201, 255, 0.2); }
+        0% { box-shadow: 0 0 15px rgba(189, 147, 249, 0.2); }
+        50% { box-shadow: 0 0 25px rgba(189, 147, 249, 0.4); }
+        100% { box-shadow: 0 0 15px rgba(189, 147, 249, 0.2); }
     }
 
     /* Apply animations to main containers */
@@ -51,10 +46,10 @@ st.markdown("""
 
     /* Sidebar Styling */
     [data-testid="stSidebar"] {
-        background: rgba(9, 18, 23, 0.85) !important;
+        background: rgba(5, 5, 5, 0.85) !important;
         backdrop-filter: blur(20px) !important;
         -webkit-backdrop-filter: blur(20px) !important;
-        border-right: 1px solid rgba(0, 201, 255, 0.2) !important;
+        border-right: 1px solid rgba(189, 147, 249, 0.2) !important;
     }
 
     /* Glassmorphism Metric Cards */
@@ -62,7 +57,7 @@ st.markdown("""
         background: rgba(255, 255, 255, 0.03) !important;
         backdrop-filter: blur(15px) !important;
         -webkit-backdrop-filter: blur(15px) !important;
-        border: 1px solid rgba(0, 201, 255, 0.2) !important;
+        border: 1px solid rgba(189, 147, 249, 0.2) !important;
         border-radius: 15px !important;
         padding: 20px !important;
         box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3) !important;
@@ -70,23 +65,23 @@ st.markdown("""
     }
     div[data-testid="metric-container"]:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 40px 0 rgba(0, 201, 255, 0.3) !important;
+        box-shadow: 0 10px 40px 0 rgba(189, 147, 249, 0.3) !important;
     }
 
     /* Form Container Glassmorphism (Login/Register) */
     [data-testid="stForm"] {
         background: rgba(255, 255, 255, 0.03) !important;
         backdrop-filter: blur(20px) !important;
-        border: 1px solid rgba(0, 201, 255, 0.3) !important;
+        border: 1px solid rgba(189, 147, 249, 0.3) !important;
         border-radius: 20px !important;
         padding: 35px !important;
         animation: pulseGlow 4s infinite;
     }
 
-    /* Gradient Buttons */
+    /* Gradient Buttons (Electric Purple to Blue) */
     div.stButton > button {
-        background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%) !important;
-        color: #091217 !important;
+        background: linear-gradient(90deg, #8E2DE2 0%, #4A00E0 100%) !important;
+        color: #ffffff !important;
         border: none !important;
         border-radius: 8px !important;
         font-weight: 700 !important;
@@ -95,8 +90,8 @@ st.markdown("""
     }
     div.stButton > button:hover {
         transform: scale(1.02) !important;
-        box-shadow: 0 5px 20px rgba(0, 201, 255, 0.6) !important;
-        color: #000000 !important;
+        box-shadow: 0 5px 20px rgba(142, 45, 226, 0.6) !important;
+        color: #ffffff !important;
     }
 
     /* Tabs Styling */
@@ -107,22 +102,22 @@ st.markdown("""
     .stTabs [data-baseweb="tab"] {
         background-color: transparent !important;
         border-radius: 4px 4px 0px 0px;
-        color: #A0AEC0 !important;
+        color: #8b9eb3 !important;
         font-size: 1.1rem;
         font-weight: 600;
         transition: color 0.3s ease;
     }
     .stTabs [aria-selected="true"] {
-        color: #00C9FF !important;
-        border-bottom: 3px solid #00C9FF !important;
+        color: #bd93f9 !important;
+        border-bottom: 3px solid #bd93f9 !important;
     }
 
-    /* Custom Header Text */
+    /* Custom Header Text (Neon Purple to Cyan) */
     .hero-title {
-        background: -webkit-linear-gradient(45deg, #00C9FF, #92FE9D);
+        background: -webkit-linear-gradient(45deg, #bd93f9, #8be9fd);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        text-shadow: 2px 2px 20px rgba(0, 201, 255, 0.3);
+        text-shadow: 2px 2px 20px rgba(189, 147, 249, 0.3);
         font-weight: 700;
     }
 </style>
@@ -138,9 +133,10 @@ def hash_password(password):
     return hashlib.sha256(password.encode()).hexdigest()
 
 def render_footer():
+    # Removed the Hackathon text, keeping it clean and commercial
     st.markdown("""
-        <div style='text-align: center; color: #4A5568; padding-top: 50px; padding-bottom: 20px; font-size: 0.85rem;'>
-            &copy; 2026 Future Innovators. All rights reserved. <br>
+        <div style='text-align: center; color: #6b7280; padding-top: 50px; padding-bottom: 20px; font-size: 0.85rem;'>
+            &copy; 2026 Future Innovators. All rights reserved.
         </div>
     """, unsafe_allow_html=True)
 
@@ -171,13 +167,13 @@ def render_auth_page():
         with col2:
             st.write("\n\n\n\n") 
             st.markdown("<h1 class='hero-title' style='text-align: center; font-size: 3.5rem;'>NEXUS</h1>", unsafe_allow_html=True)
-            st.markdown("<p style='text-align: center; color: #E2E8F0; font-size: 1.2rem; margin-bottom: 30px;'>The Future of AI-Powered Talent Acquisition.</p>", unsafe_allow_html=True)
+            st.markdown("<p style='text-align: center; color: #b9c1cb; font-size: 1.2rem; margin-bottom: 30px;'>The Future of AI-Powered Talent Acquisition.</p>", unsafe_allow_html=True)
             
             tab_login, tab_register = st.tabs(["🔒 Secure Login", "📝 Onboard Company"])
             
             with tab_login:
                 with st.form("login_form"):
-                    st.markdown("<h3 style='text-align: center; margin-bottom: 20px;'>Welcome Back</h3>", unsafe_allow_html=True)
+                    st.markdown("<h3 style='text-align: center; margin-bottom: 20px; color: white;'>Welcome Back</h3>", unsafe_allow_html=True)
                     login_email = st.text_input("Corporate Email")
                     login_pwd = st.text_input("Password", type="password")
                     st.write("")
@@ -197,7 +193,7 @@ def render_auth_page():
 
             with tab_register:
                 with st.form("register_form"):
-                    st.markdown("<h3 style='text-align: center; margin-bottom: 20px;'>Join the Network</h3>", unsafe_allow_html=True)
+                    st.markdown("<h3 style='text-align: center; margin-bottom: 20px; color: white;'>Join the Network</h3>", unsafe_allow_html=True)
                     reg_company = st.text_input("Organization Name", placeholder="e.g., Stark Industries")
                     reg_email = st.text_input("Corporate Email")
                     reg_pwd = st.text_input("Create Password", type="password")
@@ -227,11 +223,11 @@ company = st.session_state.get("company_name", "Enterprise")
 
 # Header Section
 st.markdown(f"<h1 style='font-size: 2.5rem;'>🚀 {company} <span class='hero-title'>Intelligence Hub</span></h1>", unsafe_allow_html=True)
-st.markdown("<p style='color: #A0AEC0; font-size: 1.1rem; margin-bottom: 20px;'>Automated. Explainable. Fair. | <b>National Hackathon Edition</b></p>", unsafe_allow_html=True)
+st.markdown("<p style='color: #b9c1cb; font-size: 1.1rem; margin-bottom: 20px;'>Automated. Explainable. Fair.</p>", unsafe_allow_html=True)
 
 # --- SIDEBAR ---
 st.sidebar.markdown(f"<h2 class='hero-title' style='text-align: center; font-size: 2rem;'>{company}</h2>", unsafe_allow_html=True)
-st.sidebar.markdown("<p style='text-align: center; color: #A0AEC0;'>Command Center</p>", unsafe_allow_html=True)
+st.sidebar.markdown("<p style='text-align: center; color: #8b9eb3;'>Command Center</p>", unsafe_allow_html=True)
 st.sidebar.divider()
 
 with st.sidebar.expander("⚙️ Advanced AI Matrix Tuning"):
@@ -316,11 +312,11 @@ if not df.empty:
     format_dict = {"FINAL_SCORE": "{:.2f}", "years_experience": "{:.1f}", "semantic_match_score": "{:.2f}"}
     active_formats = {k: v for k, v in format_dict.items() if k in display_df.columns}
     
-    # Table Styling Magic: Bars for experience, Green gradient for final score, Purple gradient for semantic match
+    # Table Styling Magic: Shifted to Purples and Blues to match the new theme
     styled_table = (display_df.style
-                    .background_gradient(subset=['FINAL_SCORE'], cmap="Greens")
-                    .background_gradient(subset=['semantic_match_score'], cmap="Purples")
-                    .bar(subset=['years_experience'], color='#00C9FF', vmin=0)
+                    .background_gradient(subset=['FINAL_SCORE'], cmap="Purples")
+                    .background_gradient(subset=['semantic_match_score'], cmap="Blues")
+                    .bar(subset=['years_experience'], color='#bd93f9', vmin=0)
                     .format(active_formats))
     
     st.dataframe(styled_table, use_container_width=True, height=300)
@@ -350,7 +346,8 @@ if not df.empty:
                     ]
                 })
                 fig = px.line_polar(radar_data, r='Score', theta='Metric', line_close=True, range_r=[0,100], template='plotly_dark')
-                fig.update_traces(fill='toself', line_color='#00C9FF')
+                # Changed radar line color to match new neon purple theme
+                fig.update_traces(fill='toself', line_color='#bd93f9')
                 fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
                 st.plotly_chart(fig, use_container_width=True)
 
@@ -377,12 +374,14 @@ if not df.empty:
             st.markdown("**Education Breakdown**")
             edu_col = 'degree' if 'degree' in ranked_df.columns else 'education_level'
             if edu_col in ranked_df.columns:
-                fig_edu = px.pie(ranked_df, names=edu_col, hole=0.5, color_discrete_sequence=['#00C9FF', '#92FE9D', '#f39c12', '#e74c3c'], template='plotly_dark')
+                # Updated pie chart colors
+                fig_edu = px.pie(ranked_df, names=edu_col, hole=0.5, color_discrete_sequence=['#bd93f9', '#8be9fd', '#ff79c6', '#f1fa8c'], template='plotly_dark')
                 fig_edu.update_layout(paper_bgcolor='rgba(0,0,0,0)')
                 st.plotly_chart(fig_edu, use_container_width=True)
         with c2:
             st.markdown("**Experience Distribution**")
-            fig_exp = px.histogram(ranked_df, x='years_experience', nbins=10, color_discrete_sequence=['#00C9FF'], template='plotly_dark')
+            # Updated histogram color
+            fig_exp = px.histogram(ranked_df, x='years_experience', nbins=10, color_discrete_sequence=['#bd93f9'], template='plotly_dark')
             fig_exp.update_layout(paper_bgcolor='rgba(0,0,0,0)')
             st.plotly_chart(fig_exp, use_container_width=True)
 
@@ -411,8 +410,8 @@ if not df.empty:
                 pred = model.predict(feat_df)[0]
                 
                 st.markdown(f"""
-                <div style="background: rgba(0, 201, 255, 0.1); border-left: 5px solid #00C9FF; padding: 20px; border-radius: 5px; animation: fadeInUp 0.5s ease-out;">
-                    <h3 style="margin:0; color: #00C9FF;">Predicted Success Rate: {pred:.2f}%</h3>
+                <div style="background: rgba(189, 147, 249, 0.1); border-left: 5px solid #bd93f9; padding: 20px; border-radius: 5px; animation: fadeInUp 0.5s ease-out;">
+                    <h3 style="margin:0; color: #bd93f9;">Predicted Success Rate: {pred:.2f}%</h3>
                     <p style="margin:0; color: #E2E8F0;">Based on historical firm data and real-time candidate metrics.</p>
                 </div>
                 """, unsafe_allow_html=True)
