@@ -141,7 +141,6 @@ def render_footer():
     st.markdown("""
         <div style='text-align: center; color: #4A5568; padding-top: 50px; padding-bottom: 20px; font-size: 0.85rem;'>
             &copy; 2026 Future Innovators. All rights reserved. <br>
-            <span style='font-size: 0.75rem;'>Developed for the National Hackathon.</span>
         </div>
     """, unsafe_allow_html=True)
 
