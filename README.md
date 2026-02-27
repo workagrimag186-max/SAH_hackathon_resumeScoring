@@ -71,6 +71,41 @@ This is a **Full-Stack Microservices Application** built for high-performance AI
 * **Data Science:** Scikit-learn (Linear Regression), Pandas, Numpy, Plotly
 * **Backend:** FastAPI & Uvicorn (REST API)
 
+🚀 How to Run Locally
+If you wish to run the development environment on your machine:
+
+1. Clone the repository:
+
+git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+cd your-repo-name
+
+2. Install dependencies:
+
+We recommend using a virtual environment (venv).
+
+pip install -r requirements.txt
+
+3. Set up the environment variables:
+   
+Create a .env file in the root directory and add:
+MONGO_URI=your_mongodb_atlas_connection_string
+
+5. Start the Backend:
+
+uvicorn api:app --reload
+
+5. Start the Frontend (New Terminal):
+
+streamlit run app.py
+
+
+👥 The Team (SAH_Hackathon)
+Devkanti Sarkar- Resume Parsing and Extraction Engineer
+
+Mohar Gorai - Scoring Algorithm and Data Processing Engineer
+
+Agrima Gupta - System Integration and UI developer
+
 ### Cloud Architecture:
 ```mermaid
 graph TD
