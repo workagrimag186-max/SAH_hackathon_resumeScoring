@@ -1,6 +1,3 @@
-
-
-Python
 import requests
 import streamlit as st
 import plotly.express as px
@@ -343,10 +340,3 @@ if not df.empty:
                 st.warning("Could not run prediction. Train the model first.")
 else:
     st.info("👋 Welcome! Please upload PDF resumes in the sidebar to begin processing. (Ensure backend is running!)")
-The Final Push to GitHub:
-Once you have saved this app.py, just run these three commands in your terminal:
-
-Bash
-git add app.py
-git commit -m "Final Update: Connected to live Render backend"
-git push origin main
