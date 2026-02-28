@@ -12,7 +12,7 @@ import hashlib
 st.set_page_config(layout="wide", page_title="Nexus HR Intelligence", page_icon="🌌", initial_sidebar_state="expanded")
 
 # --- MASTER TOGGLE SWITCH ---
-LOCAL_TESTING = false # Change to False when you push to Render for the judges!
+LOCAL_TESTING = False # Change to False when you push to Render for the judges!
 BASE_URL = "http://127.0.0.1:8000" if LOCAL_TESTING else "https://sah-hackathon-resumescoring.onrender.com"
 
 # --- DEEP NEBULA GLASSMORPHISM CSS ---
