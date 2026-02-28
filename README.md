@@ -11,7 +11,7 @@ In a world where one job posting attracts thousands of resumes, the traditional 
 ### What Makes Nexus Special?
 1.  **Semantic Search (No Keywords):** We don't just count keywords. Our NLP model uses **Sentence Transformers** (Hugging Face) to understand the *meaning* of a candidate's experience, matching it to the Job Description with advanced semantic similarity.
 2.  **Explainable AI:** Nexus doesn't just give a score; it generates a **radar symmetry map** for every candidate, showing exactly *why* the AI ranked them that way (e.g., strong experience, weak achievements).
-3.  **Secure Multi-Tenant Auth:** Built on **MongoDB Atlas**, Nexus allows different companies (like Stark Industries or Wayne Enterprises) to securely register and manage their own isolated talent pools.
+3.  **Secure Multi-Tenant Auth:** Built on **MongoDB Atlas**, Nexus allows different companies (like Stark Industries or Wayne Enterprises) to register and manage their own isolated talent pools securely.
 
 ---
 
