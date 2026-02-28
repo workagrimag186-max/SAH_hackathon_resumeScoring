@@ -77,7 +77,6 @@ If you wish to run the development environment on your machine:
 Deployed Website Link:
 https://analyserresume.streamlit.app/
 
-
 1. Clone the repository:
 
 git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
