@@ -40,7 +40,7 @@ st.markdown("""
 # --- ENTERPRISE MONGODB SECURITY GATEWAY ---
 @st.cache_resource
 def get_mongo_client():
-    client = pymongo.MongoClient("mongodb+srv://devkanti:devkantisarkar@hackathon.uubwq89.mongodb.net/?appName=hackathon")
+    client = 
     return client
 
 def hash_password(password):
